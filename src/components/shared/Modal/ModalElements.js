@@ -25,7 +25,7 @@ export const ModalWrapper = styled.div`
     width: 800px;
     height: 500px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-    background: #fff;
+    background: var(--c-white);
     color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -56,7 +56,7 @@ export const ModalContent = styled.div`
     button {
         padding: 10px 24px; 
         background: #141414;
-        color: #fff;
+        color: var(--c-white);
         border: none;
     }
 `

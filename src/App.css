@@ -1,6 +1,76 @@
+@font-face {
+  font-family: 'Arkhip Regular';
+  src: local('Arkhip Regular'), url(./fonts/Arkhip_font.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Quentin Regular';
+  src: local('Quentin Regular'), url('./fonts/Quentin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Urban Defender Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Urban Defender Regular'), url('./fonts/urbandefender.woff') format('woff');
+  }
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Verdana', bold, sans-serif;
+  outline: 0 !important;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--t-primary-font-family);
+  font-style: normal;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: left;
+}
+
+p {
+  text-align: center;
+    font-size: 35px;
+    line-height: 1em;
+    display: inline-block;
+    width: 100%;
+    color: var(--c-active);
+    position: relative;
+    margin-bottom: 18px;
+    font-family: var(--t-tertiary-font-family);
+}
+
+:root {
+    --c-active: #0bef9a;
+    --ca-active: 11,239,154;
+    --c-alter: #823bed;
+    --ca-alter: 130,59,237;
+    --c-alter2: #b9145e;
+    --ca-alter2: 185,20,94;
+    --c-alter3: #e50036;
+    --ca-alter3: 229,0,54;
+    --c-grey: #999;
+    --ca-grey: 153,153,153;
+    --c-light: var(--c-white);
+    --ca-light: 255,255,255;
+    --c-dark: #111;
+    --ca-dark: 17,17,17;
+    --c-dark2: #555;
+    --ca-dark2: 85,85,85;
+    --c-white: #fff;
+    --ca-white: 255,255,255;
+    --c-black: #000;
+    --ca-black: 0,0,0;
+    --t-primary-font-family: 'Arkhip Regular';
+    --t-primary-font-weight: normal;
+    --t-secondary-font-family: 'Urban Defender Regular';
+    --t-secondary-font-weight: normal;
+    --t-tertiary-font-family: 'Quentin Regular';
+    --t-tertiary-font-weight: normal;
+    --c-active-scroll-down: #0bef9a8f;
+    --c-active-scroll-down-transparent: transparent;
 }

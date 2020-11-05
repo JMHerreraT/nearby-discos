@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const TooltipText = styled.div`
   background: rgba(28, 56, 151, 0.9);
-  color: #fff;
+  color: var(--c-white);
   width: 200px;
   text-align: center;
   line-height: 44px;
@@ -64,7 +64,7 @@ export const TooltipCard = styled.div`
     position: relative;
     & ${TooltipBox} { 
     visibility: visible;
-    color: #fff;
+    color: var(--c-white);
     background-color: rgba(0, 0, 0, 0.8);
     width: 200px;
     height: 120px;

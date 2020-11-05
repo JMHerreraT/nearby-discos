@@ -1,14 +1,15 @@
 import React,{useState} from 'react'
-import {FaBars} from 'react-icons/fa'   
+import {FaBars, FaTimes} from 'react-icons/fa'   
 import Modal from '../Modal';
 import Tooltip from '../Tooltip';
-import { MobileIcon, Nav, NavbarContainer, NavBtnClassic, /* NavBtnLink, */ NavButton, NavItem, NavLinks, NavLogoContainer, NavMenu, NavLogoImage } from './NavbarElements';
+import { MobileIcon, Nav, NavbarContainer, NavBtnClassic, /* NavBtnLink, */ NavButton, NavItem, NavLinks, NavLogoContainer, NavMenu, NavLogoImage, NavUpdated, ContainerUpdated, NavbarContainerUpdated, NavLeftElements, NavLeftElementsInner, NavLeftElementsLinks, NavMiddleElement, NavMiddleElementInnerImg, NavRightElements, NavRightElementsInner, NavRightElementsLinks } from './NavbarElements';
 import logo from '../../../images/logo-green.png';
 
 const Navbar = ({toggle}) => {
 
     const [showModal,setShowModal] = useState(false);
     const [showTooltip,setShowTooltip] = useState(false);
+    const [navActive, setNavActive] = useState(false);
 
     // const openModal = () => {
     //     setShowModal(prev => !prev);
@@ -16,11 +17,21 @@ const Navbar = ({toggle}) => {
 
     const openTooltip = () => {
         setShowTooltip(prev => !prev);
+    }  
+    
+    const changeBackground = () => {
+        if(window.scrollY >= 38) {
+            setNavActive(true);
+        } else {    
+            setNavActive(false);
+        }
     }
+
+    window.addEventListener('scroll', changeBackground);
 
     return (
       <>
-        <Nav>
+        <Nav navActive = {navActive? true: false}>
             <NavbarContainer>
                 <NavMenu>
                     <NavItem>
@@ -37,7 +48,7 @@ const Navbar = ({toggle}) => {
                     <NavLogoImage src={logo}/>
                 </NavLogoContainer>
                 <MobileIcon onClick={toggle}>
-                    <FaBars/>
+                    <FaBars/>                
                 </MobileIcon>
                 <NavMenu>
                     <NavItem>
@@ -63,7 +74,7 @@ const Navbar = ({toggle}) => {
                     </ul>
                 </>
         }/>
-        <Modal showModal={showModal} setShowModal={setShowModal} type={`info`}/>
+        <Modal showModal={showModal} setShowModal={setShowModal} type={`info`}/>      
       </>  
     );
 }
