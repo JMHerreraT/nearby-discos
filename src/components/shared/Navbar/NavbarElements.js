@@ -18,9 +18,10 @@ export const Nav = styled.nav`
     width: 100%;
     z-index: 999;
     background-color: ${({navActive}) => (navActive? '#0bef9a8f': '#0bef9b00')};
-    box-shadow: ${({navActive}) => (navActive? '#0bef9a8f': '#0bef9b00')};
+    box-shadow: ${({navActive}) => (navActive? '0 5px 10px 0 #0bef9a8f': '#0bef9b00')};
     -webkit-box-shadow: ${({navActive}) => (navActive? '#0bef9a8f':'#0bef9b00')};
     transition: background-color 150ms ease-in,box-shadow 150ms ease-in,-webkit-box-shadow 150ms ease-in;
+    flex-direction: row;
     
 
     @media screen and (max-width: 960px) {
@@ -30,12 +31,13 @@ export const Nav = styled.nav`
 
 export const NavbarContainer = styled.div`
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    height: 80px;
+    height: 100%;
     z-index: 1;
     width: 100%;
     /* padding: 0 24px; */
-    max-width: 1100px;
+    max-width: calc(25%/2);
     text-transform: capitalize;
 `
 
@@ -80,6 +82,37 @@ export const MobileIcon = styled.div`
     }
 `
 
+export const NavLeftMenu = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: absolute;
+    left: 12%;
+    top: 40%;
+    margin-left: -100px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
+
+export const NavMidMenu = styled.div`
+    display:flex; 
+    flex-direction:row; 
+    justify-content: space-between;
+`
+
+export const NavRightMenu = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: absolute;        
+    right: 12%;
+    top: 25%;
+    margin-right: -100px;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
 export const NavMenu = styled.ul`
     display: flex;
     align-items:center;
