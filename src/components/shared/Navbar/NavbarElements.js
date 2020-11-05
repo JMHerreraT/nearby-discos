@@ -53,8 +53,11 @@ export const NavLogoContainer = styled(LinkRouter)`
 
     @media screen and (max-width: 768px) {
         text-align: center;
-        padding-left: 132px;
+        /* padding-left: 132px; */
         align-self: center;
+        position: absolute;
+        left: 0;
+        top: 20px;
     }
 
 `
@@ -75,7 +78,7 @@ export const MobileIcon = styled.div`
         font-size: 1.8rem;
         cursor: pointer;
         color: #FEE7E9;
-
+        top: 20px;
         &.FaTimes{
             display: none;
         }
