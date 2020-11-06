@@ -9,11 +9,18 @@
 }
 
 @font-face {
+  font-family: 'Urban Inline Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Urban Inline Regular'), url('./fonts/urbanInline.woff') format('woff');
+  }
+
+/* @font-face {
   font-family: 'Urban Defender Regular';
   font-style: normal;
   font-weight: normal;
   src: local('Urban Defender Regular'), url('./fonts/urbandefender.woff') format('woff');
-  }
+  } */
 
 
 * {
@@ -67,7 +74,7 @@ p {
     --ca-black: 0,0,0;
     --t-primary-font-family: 'Arkhip Regular';
     --t-primary-font-weight: normal;
-    --t-secondary-font-family: 'Urban Defender Regular';
+    --t-secondary-font-family: 'Urban Inline Regular';
     --t-secondary-font-weight: normal;
     --t-tertiary-font-family: 'Quentin Regular';
     --t-tertiary-font-weight: normal;

@@ -3,7 +3,7 @@ import {Link as LinkRouter} from 'react-router-dom'
 import {Link as LinkScroll} from 'react-scroll'
 
 export const Nav = styled.nav`
-    height: 105px;
+    /* height: 105px;
     // margin-top: -80px;
     display: flex;
     justify-content: center;
@@ -12,8 +12,12 @@ export const Nav = styled.nav`
     left: 0;
     top: 0;
     width: 100%;
-    height: auto;
+    height: auto; */
 
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: auto;
     background-color: ${({navActive}) => (navActive? '#0bef9a8f': '#0bef9b00')};
     box-shadow: ${({navActive}) => (navActive? '0 5px 10px 0 #0bef9a8f': '#0bef9b00')};
     -webkit-box-shadow: ${({navActive}) => (navActive? '#0bef9a8f':'#0bef9b00')};
@@ -21,34 +25,25 @@ export const Nav = styled.nav`
 
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
+        width: 100%;
     }
 `
 
-export const NavbarContainer = styled.div`
-    display: flex;
-    flex-direction: row;            
-    /* padding: 0 24px; */
-    max-width: calc(25%/2);
-    text-transform: capitalize;
+export const NavbarContainer = styled.div`    
+    text-transform: lowercase;
+    display: grid;
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    /* grid-template-columns: 600px 200px 600px; */
+    grid-template-columns: auto auto auto;
+    justify-content: center;
 `
 
 export const NavLogoContainer = styled(LinkRouter)`
-    color: #FEE7E9;
     cursor: pointer;
-    font-size: 1.5rem;
-    display:flex;
-    align-items: center;
-    /* margin-left:24px; */
-    font-weight: bold;
-    text-decoration: none;
-
     @media screen and (max-width: 768px) {
-        text-align: center;
-        /* padding-left: 132px; */
         align-self: center;
-        position: absolute;
-        left: 0;
-        top: 20px;
     }
 
 `
@@ -76,37 +71,6 @@ export const MobileIcon = styled.div`
     }
 `
 
-export const NavLeftMenu = styled.div`
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    position: absolute;
-    left: 12%;
-    top: 40%;
-    margin-left: -100px;
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
-`
-
-export const NavMidMenu = styled.div`
-    display:flex; 
-    flex-direction:row; 
-    justify-content: space-between;
-`
-
-export const NavRightMenu = styled.div`
-    display:flex;
-    flex-direction:row;
-    justify-content: space-between;
-    position: absolute;        
-    right: 12%;
-    top: 23%;
-    margin-right: -100px;
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
-`
 export const NavMenu = styled.ul`
     display: flex;
     align-items:center;
@@ -114,6 +78,58 @@ export const NavMenu = styled.ul`
     text-align: center;
     margin-right:-22px;
 
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+
+     /* Media Query for Mobile Devices */ 
+     @media (max-width: 480px) { 
+        display: none;
+        } 
+          
+        /* Media Query for low resolution  Tablets, Ipads */ 
+        @media (min-width: 481px) and (max-width: 767px) { 
+            display: none;
+        } 
+          
+        /* Media Query for Tablets Ipads portrait mode */ 
+        @media (min-width: 768px) and (max-width: 1024px){
+            display: none; 
+          } 
+        
+          
+        /* Media Query for Laptops and Desktops */ 
+        @media (min-width: 1025px) and (max-width: 1280px){ 
+            display: none;
+        } 
+          
+        /* Media Query for Large screens */ 
+        @media (min-width: 1281px) { 
+            display: none;
+        } 
+`
+
+export const NavLeftMenu = styled.ul`
+    display: grid;
+    grid-auto-columns: 1;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(5,auto);
+    grid-template-rows: 1fr;
+    justify-self: center;
+    list-style-type: none;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`
+
+export const NavRightMenu = styled.ul`
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: 1fr;
+    justify-self: center;
+    list-style-type: none;
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -138,17 +154,17 @@ export const NavLinks = styled(LinkScroll)`
     }
 
     &.active {
-        color:#CE94FF;
-
+        color:var(--c-active);
+        transition: all 0.2s ease-in-out;
     }
 `
 
 export const NavButton = styled.nav`
-    display:flex;
-    align-items:center;
-    border: 1px solid;
-    border-color: var(--c-active);
-    border-radius: 5px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1-px solid;
     padding: 3px;
     @media screen and (max-width:768px) {
         display:none;
@@ -187,7 +203,7 @@ export const NavBtnClassic = styled.div`
     font-size: 15px;
     line-height: 20px;
     outline: none;
-    padding: 12px 35px;
+    padding: 12px 14px;
     border: 2px solid;  
     border-color: var(--c-active);
     letter-spacing: 1.13px;
@@ -198,7 +214,7 @@ export const NavBtnClassic = styled.div`
 
     &:hover {
         transition: all 0.2s ease-in-out;
-        background: var(--c-active);
+        background: #0bef9294;
         color: var(--c-white);
     }
 `

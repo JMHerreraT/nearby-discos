@@ -1,11 +1,11 @@
 
 import React, {useRef} from 'react';
-import { TooltipBox, TooltipCard, TootltipBackground } from './TooltipElements';
+import { TooltipBox, TooltipCard, TooltipContainer } from './TooltipElements';
 
 
 
 const Tooltip = ({showTooltip, setShowTooltip, type, elements}) => {
-
+    console.log("showTooltip -> ", showTooltip);
     const tooltipRef = useRef();
     
     return (
@@ -13,22 +13,22 @@ const Tooltip = ({showTooltip, setShowTooltip, type, elements}) => {
             {
           showTooltip ? (  type === 'info' ? (
                
-            <TootltipBackground ref = {tooltipRef}>
+            <TooltipContainer ref = {tooltipRef}>
                 <TooltipCard>
                     <TooltipBox>
                     {elements}
                     </TooltipBox>
                 </TooltipCard> 
-            </TootltipBackground>
+            </TooltipContainer>
               
             ) :  
-                <TootltipBackground ref = {tooltipRef}>
+                <TooltipContainer ref = {tooltipRef}>
                     <TooltipCard>
                         <TooltipBox>
                         {elements}
                         </TooltipBox>
                     </TooltipCard> 
-                </TootltipBackground>
+                </TooltipContainer>
                     
             
             ) : 

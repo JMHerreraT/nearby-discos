@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {FaBars, FaTimes} from 'react-icons/fa'   
+import {FaBars, FaTimes, FaUser} from 'react-icons/fa'   
 import Modal from '../Modal';
 import Tooltip from '../Tooltip';
 import { MobileIcon, 
@@ -18,6 +18,7 @@ import { MobileIcon,
     NavMidMenu
 } from './NavbarElements';
 import logo from '../../../images/logo-green.png';
+import { MdBusiness, MdPerson } from 'react-icons/md';
 
 const Navbar = ({toggle}) => {
 
@@ -47,63 +48,109 @@ const Navbar = ({toggle}) => {
       <>
         <Nav navActive = {navActive? true: false}>
             <NavbarContainer>
-                <NavLeftMenu>
-                    <NavMenu>
+                {/* <NavLeftMenu> */}
+                    <NavLeftMenu>
                         <NavItem>
-                            <NavLinks to="inicio">Inicio</NavLinks>
+                            <NavLinks to="inicio"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >Inicio</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="calendario-eventos">Calendario de eventos</NavLinks>
+                            <NavLinks to="nosotros"
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact="true"
+                                offset={-80}
+                            >Nosotros</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="galeria">Galeria</NavLinks>
+                            <NavLinks to="eventos"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >eventos</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="servicios">Servicios</NavLinks>
+                            <NavLinks to="clientes"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >nuestros clientes</NavLinks>
                         </NavItem>
-                    </NavMenu>
-                </NavLeftMenu>
-                <NavMidMenu>
+                        {/* <NavItem>
+                            <NavLinks to="servicios"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >Servicios</NavLinks>
+                        </NavItem> */}
+                    </NavLeftMenu>
                     <NavLogoContainer to ="/">
-                        <NavLogoImage src={logo}/>
+                        <NavLogoImage width="186" height="97" src={logo}/>
                     </NavLogoContainer>
-                </NavMidMenu>
-                
                 <MobileIcon onClick={toggle}>
                     <FaBars/>                
                 </MobileIcon>
-                <NavRightMenu>
-                    <NavMenu>
+                    <NavRightMenu>
                         <NavItem>
-                            <NavLinks to="reservas">Reservas</NavLinks>
+                            <NavLinks to="reservas"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >Reservas</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="testimonios">Testimonios</NavLinks>
+                            <NavLinks to="testimonios"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >Testimonios</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="contacto">Contacto</NavLinks>
+                            <NavLinks to="contacto"
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact="true"
+                            offset={-80}
+                            >Contacto</NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavButton>
                                 {/* <NavBtnLink onClick={openModal}>Cuenta</NavBtnLink> */}
-                                <NavBtnClassic onClick={openTooltip}>Cuenta</NavBtnClassic>
+                                <NavBtnClassic onClick={openTooltip}>
+                                    <FaUser/> Cuenta
+                                </NavBtnClassic>
+                                <Tooltip showTooltip={showTooltip} setShowTooltip={setShowTooltip} type={`account`} elements = {
+                                        <>
+                                            <ul>
+                                                <li><MdPerson/> Cliente</li>
+                                                <li><MdBusiness/> Empresa</li>
+                                            </ul>
+                                        </>
+                                }/>
                             </NavButton>
                         </NavItem>
-                        <NavItem>
-                            <NavLinks to="contacto">ES</NavLinks>
-                        </NavItem>
-                    </NavMenu>
-                </NavRightMenu>                
+                    </NavRightMenu>
+                {/* </NavRightMenu>                 */}
             </NavbarContainer>
         </Nav>
-        <Tooltip showTooltip={showTooltip} setShowTooltip={setShowTooltip} type={`selected`} elements = {
-                <>
-                    <ul>
-                        <li>Ingreso</li>
-                        <li>Registro</li>
-                    </ul>
-                </>
-        }/>
+        
         <Modal showModal={showModal} setShowModal={setShowModal} type={`info`}/>      
       </>  
     );

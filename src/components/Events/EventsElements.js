@@ -1,7 +1,7 @@
 import { MdArrowForward,MdKeyboardArrowRight } from 'react-icons/md';
 import styled from 'styled-components';
 
-export const HeroContainer = styled.div`
+export const EventsContainer = styled.div`
     background: #0c0c0c;
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ export const HeroContainer = styled.div`
     } 
 `;
 
-export const HeroBg = styled.div`
+export const EventsBg = styled.div`
     position: absolute;    
     top: 0;
     right: 0;
@@ -58,47 +58,58 @@ export const ImageBg = styled.img`
     height: 100%;
 `;
 
-export const HeroContent = styled.div`
-    z-index: 2;
+export const EventsDetail = styled.div`
+    z-index: 3;
     max-width: 1200px;
     position: absolute;
-    padding: 8px 24px;
+    /* padding: 8px 24px; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 `;
 
-export const HeroH1 = styled.h1`
-    color: var(--c-light);   
-    text-align: center;
+export const EventsP = styled.p`
+    color: var(--c-active);   
+    
     font-family: var(--t-tertiary-font-family);
     font-weight: var(--t-tertiary-font-weight);
     text-align: center;
-    font-size: 77px;
-    line-height: 1.5em;
-    color: var(--c-light);
+    font-size: 35px;
+    line-height: 1em;
     text-shadow: 0 0 26px var(--c-active),0 0 26px rgba(var(--ca-alter2),.52);
     margin-bottom: 0;
+    width: 50%;
     @media screen and (max-width: 768px) {
-        font-size: 40px;
+        font-size: 20px;
     }
 
     @media screen and (max-width: 480px) {
-        font-size: 32px;
+        font-size: 18px;
     }
 `;
 
-export const HeroP = styled.p`
+export const EventsH2 = styled.h2`
+    color: var(--c-light);
+    font-weight: 700;
     font-family: var(--t-secondary-font-family);
     margin-top: 24px;
-    font-size: 24px;
     text-align: center;
     max-width: 600px;
-    text-shadow: 0 0 26px var(--c-active), 0 0 26px rgba(var(--ca-alter2), 0.52);
-    color: #823bed;
-    font-weight: 400;
-    line-height: 1.2em;
-    letter-spacing: 3.18px;
+    text-shadow: 0 0 26px var(--c-active),0 0 26px rgba(var(--ca-alter2),0.52);
+    line-height: 1.1;
+    letter-spacing: 3.18px;     
+    font-size: 50px;
+    /* font-family: var(--t-secondary-font-family);
+    margin-top: 24px;
+    text-align: center;
+    max-width: 600px;
+    text-shadow: 0 0 26px var(--c-active),0 0 26px rgba(var(--ca-alter2),0.52);
+    color: var(--c-light);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 3.18px; */
+
     @media screen and (max-width: 768px) {
         font-size: 24px;
     }
@@ -108,7 +119,17 @@ export const HeroP = styled.p`
     }
 `;
 
-export const HeroButtonWrapper = styled.div`
+export const EventsPSubTitle = styled.p`
+    font-size: 18px;
+    font-family: var(--t-primary-font-family);
+    font-weight: 400;
+    line-height: 1.67;
+    color: rgba(255,255,255,.8);
+    width: 75%;
+    margin: 17px 0 14px 0;
+`
+
+export const EventsButtonWrapper = styled.div`
     margin-top: 32px;
     display:flex;
     flex-direction: column;

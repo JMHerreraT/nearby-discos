@@ -1,7 +1,8 @@
 import { MdArrowForward,MdKeyboardArrowRight } from 'react-icons/md';
 import styled from 'styled-components';
+import {Link as LinkRouter} from 'react-router-dom'
 
-export const HeroContainer = styled.div`
+export const ClientsContainer = styled.div`
     background: #0c0c0c;
     display: flex;
     justify-content: center;
@@ -34,7 +35,7 @@ export const HeroContainer = styled.div`
     } 
 `;
 
-export const HeroBg = styled.div`
+export const ClientsBg = styled.div`
     position: absolute;    
     top: 0;
     right: 0;
@@ -58,76 +59,34 @@ export const ImageBg = styled.img`
     height: 100%;
 `;
 
-export const HeroContent = styled.div`
-    z-index: 2;
+export const ClientsContent = styled.div`
+    z-index: 3;
     max-width: 1200px;
     position: absolute;
-    padding: 8px 24px;
+    /* padding: 8px 24px; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 `;
 
-export const HeroH1 = styled.h1`
-    color: var(--c-light);   
-    text-align: center;
+export const ClientsP = styled.p`      
     font-family: var(--t-tertiary-font-family);
     font-weight: var(--t-tertiary-font-weight);
-    text-align: center;
-    font-size: 77px;
-    line-height: 1.5em;
-    color: var(--c-light);
+    margin: 0;
     text-shadow: 0 0 26px var(--c-active),0 0 26px rgba(var(--ca-alter2),.52);
-    margin-bottom: 0;
-    @media screen and (max-width: 768px) {
-        font-size: 40px;
-    }
-
-    @media screen and (max-width: 480px) {
-        font-size: 32px;
-    }
-`;
-
-export const HeroP = styled.p`
-    font-family: var(--t-secondary-font-family);
-    margin-top: 24px;
-    font-size: 24px;
+    white-space: nowrap;
+    color: var(--c-light);
     text-align: center;
-    max-width: 600px;
-    text-shadow: 0 0 26px var(--c-active), 0 0 26px rgba(var(--ca-alter2), 0.52);
-    color: #823bed;
-    font-weight: 400;
-    line-height: 1.2em;
-    letter-spacing: 3.18px;
+    line-height: 1em;
+    width: auto;
+    font-size: 7.5vw;   
+    line-height: 1em;
     @media screen and (max-width: 768px) {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     @media screen and (max-width: 480px) {
         font-size: 18px;
     }
 `;
-
-export const HeroButtonWrapper = styled.div`
-    margin-top: 32px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-export const ArrowForward = styled(MdArrowForward)`
-    margin-left: 8px;
-    font-size: 20px;
-`
-
-export const ArrowRight = styled(MdKeyboardArrowRight)`
-    margin-left: 8px;
-    font-size: 20px;
-`
-
-export const Button = styled.button`
-
-`
-
-
-
