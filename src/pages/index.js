@@ -3,6 +3,7 @@ import About from '../components/About';
 import Clients from '../components/Clients';
 import Events from '../components/Events';
 import HeroSection from '../components/Hero';
+import Reservation from '../components/Reservation';
 import Navbar from '../components/shared/Navbar';
 import Sidebar from '../components/shared/Sidebar';
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
          <About/>
          <Events/>
          <Clients/>
+         <Reservation/>
         </>
     )
 }
