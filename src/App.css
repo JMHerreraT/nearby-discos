@@ -1,25 +1,25 @@
 @font-face {
   font-family: 'Arkhip Regular';
-  src: local('Arkhip Regular'), url(./fonts/Arkhip_font.woff) format('woff');
+  src: local('Arkhip Regular'), url(./assets/fonts/Arkhip_font.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Quentin Regular';
-  src: local('Quentin Regular'), url('./fonts/Quentin.woff') format('woff');
+  src: local('Quentin Regular'), url('./assets/fonts/Quentin.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Urban Inline Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Urban Inline Regular'), url('./fonts/urbanInline.woff') format('woff');
+  src: local('Urban Inline Regular'), url('./assets/fonts/urbanInline.woff') format('woff');
   }
 
 /* @font-face {
   font-family: 'Urban Defender Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Urban Defender Regular'), url('./fonts/urbandefender.woff') format('woff');
+  src: local('Urban Defender Regular'), url('./assets/fonts/urbandefender.woff') format('woff');
   } */
 
 

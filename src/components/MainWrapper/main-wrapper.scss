@@ -1,0 +1,11 @@
+@use '../../scss/abstracts' as *;
+
+.main-wrapper {
+    // @include flex(stretch);
+    scroll-behavior: smooth;
+    flex-grow: 1;
+    
+    @include tablet {
+        flex-direction: column;
+    }
+}

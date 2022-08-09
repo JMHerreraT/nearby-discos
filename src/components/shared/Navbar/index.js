@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {FaBars, FaTimes, FaUser} from 'react-icons/fa'   
+import {FaBars, FaUser} from 'react-icons/fa'   
 import Modal from '../Modal';
 import Tooltip from '../Tooltip';
 import { MobileIcon, 
@@ -17,7 +17,7 @@ import { MobileIcon,
     NavLeftMenu,
     NavMidMenu
 } from './NavbarElements';
-import logo from '../../../images/logo-green.png';
+import logo from '../../../assets/images/logo-green.png';
 import { MdBusiness, MdPerson } from 'react-icons/md';
 
 const Navbar = ({toggle}) => {

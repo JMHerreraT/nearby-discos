@@ -1,7 +1,7 @@
 import React,{useRef, useEffect, useCallback} from 'react';
 import {useSpring, animated} from 'react-spring';
 import { Background, ClosModalButton, ModalContent, ModalImage, ModalWrapper } from './ModalElements';
-import imageModal from '../../../images/bg3.jpg';
+import imageModal from '../../../assets/images/bg3.jpg';
 const Modal = ({showModal, setShowModal, type}) => {
 
     const modalRef = useRef()

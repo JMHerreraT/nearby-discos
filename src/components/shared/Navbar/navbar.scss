@@ -1,0 +1,79 @@
+@use "../../../scss/abstracts/" as *;
+
+.nav {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transition: background-color 150ms ease-in, box-shadow 150ms ease-in,
+    -webkit-box-shadow 150ms ease-in;
+
+  @include tablet {
+    transition: 0.8s all ease;
+    width: 100%;
+  }
+}
+
+.container {
+  text-transform: lowercase;
+  @include flex(center, space-evenly);
+  flex-direction: row;
+  text-align: center;
+  @include tablet {
+    display: none;
+  }
+}
+
+.content {
+  align-items: center;
+}
+
+.logo-container {
+  cursor: pointer;
+  @include tablet {
+    align-self: center;
+  }
+}
+
+.item-container {
+  @include flex(center,  center);
+  justify-self: center;
+  list-style-type: none;
+}
+
+.item-link {
+  color: $bodyBg;
+  @include flex();
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    color: $active;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.active {
+    color: $active;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.mobile-container {
+        display: none;
+        @include tablet {
+          display:block;
+        position:absolute;
+        right:0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #FEE7E9;
+        top: 20px;
+        &.FaTimes{
+            display: none;
+        }
+        }
+}
