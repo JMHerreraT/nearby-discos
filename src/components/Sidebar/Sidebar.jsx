@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaTimes as CloseIcon } from "react-icons/fa";
 import "./sidebar.scss";
-import SidebarMock from "../../../mocks/SidebarMock";
+import SidebarMock from "../../mocks/SidebarMock";
 
 const Sidebar = ({ isOpen, toggle }) => {
   const location = useLocation();

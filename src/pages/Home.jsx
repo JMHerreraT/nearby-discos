@@ -14,6 +14,8 @@ const Home = () => {
         <div className="row" key={index}>
           <div className="col-12 col-md-12">
             <HeroSection
+              centerText={section.centerText}
+              hasTwoSides={section.hasTwoSides}
               title={section.title}
               subTitle={section.subTitle}
               hasDescription={section.hasDescription}

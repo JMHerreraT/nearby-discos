@@ -1,10 +1,11 @@
-@use "../../../scss/abstracts/" as *;
+@use "../../scss/abstracts/" as *;
 
 .nav {
   z-index: 10;
   position: absolute;
   width: 100%;
   height: auto;
+  margin-top: 30px;
   transition: background-color 150ms ease-in, box-shadow 150ms ease-in,
     -webkit-box-shadow 150ms ease-in;
 
@@ -30,6 +31,7 @@
 
 .logo-container {
   cursor: pointer;
+  text-transform: capitalize;
   @include tablet {
     align-self: center;
   }
@@ -49,6 +51,10 @@
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+
+  &-active {
+    color: $active;
+  }
 
   &:hover {
     color: $active;

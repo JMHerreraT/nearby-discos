@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.scss";
-import logo from "../../../assets/images/logo-green.png";
-import navbarMock from "../../../mocks/NavbarMock";
+import logo from "../../assets/images/logo-text.png";
+import navbarMock from "../../mocks/NavbarMock";
+import Text from "../shared/Text/Text";
 
 const Navbar = ({ toggle }) => {
   const [navActive, setNavActive] = useState(false);
+  const location = useLocation();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const currentPath = window.location.pathname.split("/")[1];
+    const activeItem = navbarMock.findIndex(
+      (item) => item.section === currentPath
+    );
+    setActiveIndex(currentPath.length === 0 ? 0 : activeItem);
+  }, [location]);
+
 
   const changeBackground = () => {
     if (window.scrollY >= 38) {
@@ -36,7 +48,9 @@ const Navbar = ({ toggle }) => {
                     index <= 3 && (
                       <li className="item">
                         <Link
-                          className="item-link"
+                           className={`item-link ${
+                            activeIndex === index && `item-link-active`
+                          }`}
                           to={item.link}
                           smooth={true}
                           duration={500}
@@ -53,7 +67,10 @@ const Navbar = ({ toggle }) => {
             </div>
             <div className="col-4 col-md-4">
               <Link to="/" className="logo-container">
-                <img src={logo} alt={`logo`} width={186} height={97} />
+                {/* <img src={logo} alt={`logo`} width={186} height={97} /> */}
+                <Text quentin hasShadow size={35} color={`white`}>
+                  {`Nearby Discos`}
+                </Text>
               </Link>
             </div>
             <div className="col-4 col-md-4">
@@ -63,7 +80,9 @@ const Navbar = ({ toggle }) => {
                     index > 3 && (
                       <li className="item">
                         <Link
-                          className="item-link"
+                          className={`item-link ${
+                            activeIndex === index && `item-link-active`
+                          }`}
                           to={item.link}
                           smooth={true}
                           duration={500}

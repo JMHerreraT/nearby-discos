@@ -6,6 +6,8 @@ import slideImagesMock from "../../mocks/slideImagesMock";
 
 const HeroSection = ({
   isSlide,
+  hasTwoSides,
+  centerText,
   title,
   subTitle,
   hasDescription,
@@ -21,10 +23,6 @@ const HeroSection = ({
 
   const onHover = () => {
     setHover(!hover);
-  };
-
-  const className = {
-    isSlide: isSlide && "image-bg",
   };
 
   const nextSlide = useCallback(() => {
@@ -43,7 +41,6 @@ const HeroSection = ({
 
   return (
     <div className="hero">
-      {console.log('slideIndex -> ', slideIndex)}
       {isSlide ? (
         slideImagesMock.map((image, index) => (
           <div
@@ -71,42 +68,81 @@ const HeroSection = ({
           style={{
             backgroundImage: imageBg && `url(${imageBg})`,
           }}
-        >
-          <img className="" src={``} />
-        </div>
+        ></div>
       )}
-      <div className="hero-content">
-        <div className="row center">
-          <div className="col-12 col-md-12">
-            <Text quentin hasShadow size={35} color={`white`}>
-              {title}
-            </Text>
+      <div className={`hero-content ${centerText && `center`}`}>
+        {hasTwoSides ? (
+          <div className="row">
+            <div className="col-6 hide-md"></div>
+            <div className="col-6 col-md-12">
+              <div className="row">
+                <div className="col-12 col-md-12">
+                  <Text quentin hasShadow size={35} color={`white`}>
+                    {title}
+                  </Text>
+                </div>
+                <div className="col-12 col-md-12">
+                  <Text raleway hasShadow uppercase size={50} color={`white`}>
+                    {subTitle}
+                  </Text>
+                </div>
+                <div className="col-12 col-md-12">
+                  {hasDescription && (
+                    <Text arkhip hasShadow uppercase size={18} color={`white`}>
+                      {description}
+                    </Text>
+                  )}
+                </div>
+                {hasButton && (
+                  <div className="button-wrapper col-4 col-md-12">
+                    <Button
+                      to="calendario-eventos"
+                      onMouseEnter={onHover}
+                      onMouseLeave={onHover}
+                      primary
+                      transparent
+                      hasHover
+                    >
+                      {buttonTitle}
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-          <div className="col-12 col-md-12">
-            <Text raleway hasShadow uppercase size={50} color={`white`}>
-              {subTitle}
-            </Text>
-          </div>
-          {hasDescription && (
+        ) : (
+          <div className="row center">
             <div className="col-12 col-md-12">
-              <Text arkhip hasShadow uppercase size={18} color={`white`}>
-                {description}
+              <Text quentin hasShadow size={35} color={`white`}>
+                {title}
               </Text>
             </div>
-          )}
-        </div>
-        {hasButton && (
-          <div className="button-wrapper">
-            <Button
-              to="calendario-eventos"
-              onMouseEnter={onHover}
-              onMouseLeave={onHover}
-              primary
-              transparent
-              hasHover
-            >
-              {buttonTitle}
-            </Button>
+            <div className="col-12 col-md-12">
+              <Text raleway hasShadow uppercase size={50} color={`white`}>
+                {subTitle}
+              </Text>
+            </div>
+            {hasDescription && (
+              <div className="col-12 col-md-12">
+                <Text arkhip hasShadow uppercase size={18} color={`white`}>
+                  {description}
+                </Text>
+              </div>
+            )}
+            {hasButton && (
+              <div className="button-wrapper col-12 col-md-12">
+                <Button
+                  to="calendario-eventos"
+                  onMouseEnter={onHover}
+                  onMouseLeave={onHover}
+                  primary
+                  transparent
+                  hasHover
+                >
+                  {buttonTitle}
+                </Button>
+              </div>
+            )}
           </div>
         )}
         {children}
