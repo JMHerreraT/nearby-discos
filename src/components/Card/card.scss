@@ -1,2 +1,11 @@
 @use "../../scss/abstracts/" as *;
 
+.card {
+    width: 300px;
+    height: 600px;
+    box-shadow: 0px 0px 15px -5px $active;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flex(center, center);
+}
+

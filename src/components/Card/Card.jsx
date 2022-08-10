@@ -1,8 +1,11 @@
 import React from 'react'
+import "./card.scss";
 
-const Card = () => {
+const Card = ({imageBg}) => {
   return (
-    <div>Card</div>
+    <div className={`card`} style={{backgroundImage: imageBg && `url(${imageBg})`}}>
+      
+    </div>
   )
 }
 

@@ -29,7 +29,7 @@ const Sidebar = ({ isOpen, toggle }) => {
       <div className="sidebar-wrapper">
         <div className="sidebar-menu">
           {SidebarMock.map((item, index) => (
-            <Link key={index} to={item.link} onClick={toggle}  className={`${
+            <Link key={index} to={item.link} onClick={toggle}  className={`sidebar-item ${
                 activeIndex === index && `sidebar-item-active`
               }`}>
               {item.text}

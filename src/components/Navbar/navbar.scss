@@ -2,16 +2,19 @@
 
 .nav {
   z-index: 10;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: auto;
-  margin-top: 30px;
+  padding: 20px;
   transition: background-color 150ms ease-in, box-shadow 150ms ease-in,
     -webkit-box-shadow 150ms ease-in;
 
   @include tablet {
     transition: 0.8s all ease;
     width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
   }
 }
 
@@ -51,6 +54,13 @@
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  font-family: $fourtyFontFamily, Sans-serif;
+  font-size: $typographyFontSize;
+  font-weight: $typographyFontWeight;
+  text-transform: capitalize;
+  line-height: $typographyLineHeight;
+  letter-spacing: $typographyLetterSpacing;
+  word-spacing: $typographyLetterSpacing;
 
   &-active {
     color: $active;

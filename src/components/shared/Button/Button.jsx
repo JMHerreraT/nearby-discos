@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./button.scss";
 
 const Button = ({
@@ -23,6 +25,7 @@ const Button = ({
   transparent,
   borderColor,
   textColor,
+  to,
   onClick
 }) => {
   const className = {
@@ -47,17 +50,18 @@ const Button = ({
     textColor: textColor && "textColor",
   };
   return (
-    <button
+    <Link
+      to={to}
       className={`btn ${Object.values(className).join(" ")}`}
       style={{
-        width: xs ? 40 : sm ? 126 : md ? 166 : l ? 267 : xl ? 400 : `auto`,
+        width: xs ? 40 : sm ? 126 : md ? 166 : l ? 267 : xl ? 400 : `100%`,
         height: xs ? 40 : sm ? 43 : md ? 44 : l ? 55 : xl ? 57.75 : `auto`,
         backgroundColor: bgColor || `$active`
       }}
       onClick={onClick}
     >
       {children}
-    </button>
+    </Link>
   );
 };
 

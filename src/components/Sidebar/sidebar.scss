@@ -69,6 +69,14 @@
   }
 
   &-item {
+    font-family: $fourtyFontFamily, Sans-serif;
+    font-size: $typographyFontSize;
+    font-weight: $typographyFontWeight;
+    text-transform: capitalize;
+    line-height: $typographyLineHeight;
+    letter-spacing: $typographyLetterSpacing;
+    word-spacing: $typographyLetterSpacing;
+    padding: 20px;
     &-active {
       color: $active;
     }

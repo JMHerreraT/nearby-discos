@@ -1,13 +1,17 @@
 @use "./abstracts/" as *;
 
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inspiration&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @font-face {
   font-family: "Arkhip Regular";
-  src: local("Arkhip Regular"), url(../assets/fonts/Arkhip_font.woff) format("woff");
+  src: local("Arkhip Regular"),
+    url(../assets/fonts/Arkhip_font.woff) format("woff");
 }
 
 @font-face {
   font-family: "Quentin Regular";
-  src: local("Quentin Regular"), url("../assets/fonts/Quentin.woff") format("woff");
+  src: local("Quentin Regular"),
+    url("../assets/fonts/Quentin.woff") format("woff");
 }
 
 @font-face {
@@ -16,11 +20,6 @@
   font-weight: normal;
   src: local("Urban Inline Regular"),
     url("../assets/fonts/urbanInline.woff") format("woff");
-}
-
-@font-face {
-  font-family: "raleway-bold";
-  src: local("raleway-bold"), url(../assets/fonts/raleway-bold.woff) format("woff");
 }
 
 * {
@@ -36,7 +35,6 @@
 }
 
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
   &::-webkit-scrollbar {
     width: 6px;
@@ -68,15 +66,21 @@ body {
 }
 
 p {
-  text-align: center;
-  font-size: 35px;
+  // font-size: 35px;
+  font-family: $fourtyFontFamily;
+  font-size: $typographyFontSize;
+  font-weight: $typographyFontWeight;
+  line-height: $typographyLineHeight;
+  letter-spacing: $typographyLetterSpacing;
   line-height: 1em;
   display: inline-block;
   width: 100%;
-  color: var(--c-active);
+  color: $white;
   position: relative;
   margin-bottom: 18px;
-  font-family: $tertiaryFontFamily;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -95,6 +99,11 @@ li {
   @include tablet {
     margin-bottom: $mobileSpacing;
   }
+}
+
+.center {
+  text-align: center;
+  justify-content: center;
 }
 
 // .title {

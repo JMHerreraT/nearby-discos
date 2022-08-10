@@ -36,7 +36,7 @@ const Navbar = ({ toggle }) => {
         className="nav"
         style={{
           backgroundColor: navActive ? "#0bef9a8f" : "#0bef9b00",
-          boxShadow: navActive ? "0 5px 10px 0 #0bef9a8f" : "#0bef9b00",
+          boxShadow: navActive ? "0 5px 10px 0 #0bef9a8f" : "0 5px 10px 0  #0bef9b00",
         }}
       >
         <div className="container">
